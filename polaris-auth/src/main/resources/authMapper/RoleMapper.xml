@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unbiased.auth.mapper.RoleMapper">
+<!--    <resultMap id="BaseResultMap" type="com.unbiased.auth.entity.Role">-->
+<!--        <id column="id" jdbcType="INTEGER" property="id" />-->
+<!--        <result column="role_name" jdbcType="VARCHAR" property="roleName" />-->
+<!--    </resultMap>-->
+
+    <select id="findRoleByUser" resultType="com.unbiased.auth.entity.Role" parameterType="com.unbiased.auth.entity.User">
+        SELECT
+        r.id as id,
+        r.role_code as role_code
+        FROM
+        user u
+        LEFT JOIN user_role ur ON u.id = ur.user_id
+        LEFT JOIN role r ON r.id = ur.role_id
+        <where>
+            1 = 1
+            <if test="username != null and username != '' ">
+                AND u.username LIKE CONCAT('%',#{username},'%')
+            </if>
+        </where>
+    </select>
+
+</mapper>

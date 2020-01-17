@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.unbiased</groupId>
+		<artifactId>polaris</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath />
+		<!-- lookup parent from repository -->
+	</parent>
+	<artifactId>polaris-main</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>polaris-main</name>
+	<description>polaris 主启动模块</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.unbiased</groupId>
+			<artifactId>polaris-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.unbiased</groupId>
+			<artifactId>polaris-auth</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.unbiased</groupId>
+			<artifactId>polaris-admin</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+    </dependencies>
+
+	<build>
+		<finalName>polaris-main</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<fork>true</fork>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
