@@ -29,7 +29,7 @@
         <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
         <durid-spring.version>1.1.17</durid-spring.version>
         <mysql.version>8.0.18</mysql.version>
-        <fastjson.version>1.2.62</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
 
         <swagger2.version>2.9.2</swagger2.version>
         <swagger-bootstrap-ui.version>1.9.6</swagger-bootstrap-ui.version>
